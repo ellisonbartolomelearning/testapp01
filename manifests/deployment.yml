@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myfirstaksdeployment01 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myfirstaksdeployment01
+  template:
+    metadata:
+      labels:
+        app: myfirstaksdeployment01 
+    spec:
+      containers:
+        - name: myfirstaksdeployment01 
+          image: acrellison01.azurecr.io/myfirstaksdeployment01
+          ports:
+          - containerPort: 80
